@@ -1,0 +1,79 @@
+  {% load static %}
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@ckwebtasarim.net">info@ckwebtasarim.net</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>0 (533) 742 48 04</i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://github.com/emreay58" rel="nofollow" class="twitter"><i class="bi bi-github"></i></a>
+        <a href="https://www.facebook.com/emre.ay.165/about" rel="nofollow" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/ckwebtasarim58/" rel="nofollow" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ck-web-tasarim-03b928235/" rel="nofollow" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+      <div class="logo">
+        <!-- <h1 class="text-light"><a href="{% url 'index' %}"><span style="color:#f03c02; font-size:32px;"><strong>C&K</strong></span> Bilişim</a></h1>-->
+        <!-- Uncomment belo{w if you prefer to use an image logo -->
+        <a href={% url 'index' %}><img src="{% static 'assets/img/logo.png' %}" alt="" style="width:150px; height:50px;"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a 
+            {% if request.path == '/' %}
+            class="active"
+            {% else %}
+            class="nav-link"
+            {% endif %}
+            href="{% url 'index' %}">Ana Sayfa</a></li>
+          <li class="dropdown"><a href="{% url 'services' %}"
+           <span>Hizmetler</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% for services in services %}
+                <li><a href="{% url 'services_detail' services.slug %}">{{services.title|title}}</a></li>
+                {% endfor %}
+            </ul>
+          </li>
+          <li><a href="{% url 'referans' %}"
+            {% if 'referanslar' in request.path %}
+                class="nav-link active" 
+              {% else %} 
+                class="nav-link" 
+             {% endif %}>Referanslar</a></li>
+             <li><a href="{% url 'blogs' %}"
+              {% if 'blog' in request.path %}
+                  class="nav-link active" 
+                {% else %} 
+                  class="nav-link" 
+               {% endif %}>Blog</a></li>
+            <li><a href="{% url 'pricing' %}"
+              {% if 'fiyatlama' in request.path %}
+                  class="nav-link active" 
+                {% else %} 
+                  class="nav-link" 
+               {% endif %}>Fiyatlama</a></li>
+          <li><a href="{% url 'about' %}"
+              {% if 'hakkimizda' in request.path %}
+                class="nav-link active" 
+              {% else %} 
+                class="nav-link" 
+             {% endif %}>Hakkımızda</a></li>
+            
+          <li><a href="{% url 'contact' %}"
+            {% if 'iletisim' in request.path %}
+                class="nav-link active" 
+              {% else %} 
+                class="nav-link" 
+             {% endif %}>İletişim</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->

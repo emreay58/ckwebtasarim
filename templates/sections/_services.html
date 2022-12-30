@@ -1,0 +1,24 @@
+
+    <!-- ======= Services Section ======= -->
+  
+    <section id="services" class="services">
+      <div class="container">
+        <div class="row">
+          <h1 class="h3 text-center text-muted">Tuzla Web Tasarım ve Yazılım Şirketi | C&K Web Tasarım Hizmetleri</h1>
+          <p class="text-muted text-center p-2">
+            Tuzla Web Tasarım ve Yazılım Şirketi C&K Web Tasarım ve SEO Hizmetleri, google dostu seo uyumlu kurumsal web siteler 2.990 ₺'den başlayan kampanyalı fiyat
+          </p>
+     {% for services in  services %}
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="{{services.icon}}"></i></div>
+              <h4 class="title"><a href="{% url 'services_detail' services.slug %}">{{services.title}}</a></h4>
+              <p class="description">{{ services.altbaslik}}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+   

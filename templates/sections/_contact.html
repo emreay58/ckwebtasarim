@@ -1,0 +1,64 @@
+{% load static %}
+
+<section id="contact" class="contact">
+    <div class="container">
+
+      <div class="row justify-content-center" data-aos="fade-up">
+
+        <div class="col-lg-10">
+
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-4 info">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Lokasyon: Home Ofis</h4>
+                <p>İstasyon Mah.<br>Hatboyu Cad. No:170 Tuzla /İstanbul</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@ckwebtasarim.net<br>iletisim@ckwebtasarim.net</p>
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="bi bi-phone"></i>
+                <h4>Tel:</h4>
+                <p>05337424804<br>05347175986</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row mt-5 justify-content-center pricing" data-aos="fade-up">
+        <div class="col-lg-10">
+          <form method="POST">
+            {% csrf_token %}
+            {% if kayit %}
+            <div class="alert alert-success">
+              <p>{{ kayit }}</p>
+            </div>
+            {% endif %}
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" placeholder="Adınız Soyadınız" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email"  placeholder="Email adresiniz" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="konu"  placeholder="Konu" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+            </div>
+            <input type="submit" value="Gönder" class="btn-buy mt-3">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Contact Section -->

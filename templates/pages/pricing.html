@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tuzla Web tasarım Fiyatları | Seo Fiyatları | C&K Web Tasarım Hizmetleri{% endblock title %}
+{% block dc.title %}Tuzla Web tasarım Fiyatları | Seo Fiyatları | C&K Web Tasarım Hizmetleri{% endblock dc.title %}
+{% block og.title %}Tuzla Web tasarım Fiyatları | Seo Fiyatları | C&K Web Tasarım Hizmetleri{% endblock og.title %}
+{% block tw.title %}Tuzla Web tasarım Fiyatları | Seo Fiyatları | C&K Web Tasarım Hizmetleri{% endblock tw.title %}
+{% block item.title %}Tuzla Web tasarım Fiyatları | Seo Fiyatları | C&K Web Tasarım Hizmetleri{% endblock item.title %}
+
+{% block description %}Tuzla web tasarım fiyatları SEO fiyatları 2.999 ₺'den başlayan kampanyalı fiyatlarımızı inceleyin - 05337424804{% endblock description %}
+{% block dc.description %}Tuzla web tasarım fiyatları SEO fiyatları 2.999 ₺'den başlayan kampanyalı fiyatlarımızı inceleyin - 05337424804{% endblock dc.description %}
+{% block og.description %}Tuzla web tasarım fiyatları SEO fiyatları 2.999 ₺'den başlayan kampanyalı fiyatlarımızı inceleyin - 05337424804{% endblock og.description %}
+{% block tw.description %}Tuzla web tasarım fiyatları SEO fiyatları 2.999 ₺'den başlayan kampanyalı fiyatlarımızı inceleyin - 05337424804{% endblock tw.description %}
+{% block item.description %}Tuzla web tasarım fiyatları SEO fiyatları 2.999 ₺'den başlayan kampanyalı fiyatlarımızı inceleyin - 05337424804{% endblock item.description %}
+
+{% block content %}
+
+      <!-- ======= Breadcrumbs ======= -->
+       <!-- ======= Breadcrumbs ======= -->
+     <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Web Site Tasarım Fiyatları</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+            <li>Hakkımızda</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    {% include 'sections/_pricing.html' %}
+
+{% endblock content %}

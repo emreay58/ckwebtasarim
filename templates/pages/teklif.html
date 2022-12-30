@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}C&K Web Tasarım Hizmetleri | Teklif Formu | 05337424804{% endblock title %}
+{% block dc.title %}C&K Web Tasarım Hizmetleri | Teklif Formu | 05337424804{% endblock dc.title %}
+{% block og.title %}C&K Web Tasarım Hizmetleri | Teklif Formu | 05337424804{% endblock og.title %}
+{% block tw.title %}C&K Web Tasarım Hizmetleri | Teklif Formu | 05337424804{% endblock tw.title %}
+{% block item.title %}C&K Web Tasarım Hizmetleri | Teklif Formu | 05337424804{% endblock item.title %}
+
+{% block description %}Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.{% endblock description %}
+{% block dc.description %}Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.{% endblock dc.description %}
+{% block og.description %}Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.{% endblock og.description %}
+{% block tw.description %}Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.{% endblock tw.description %}
+{% block item.description %}Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.{% endblock item.description %}
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+  
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>TEKLİF FORMU</h2>
+        <ol>
+          <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+          <li>Teklif Formu</li>
+        </ol>
+      </div>
+  
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+{% include 'sections/_teklif.html' %}
+
+{% endblock content %}

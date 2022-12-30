@@ -1,0 +1,57 @@
+{% load static %}
+
+<section class="pricing">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-8 mx-auto">
+                <div class="box" data-aos="fade-right">
+                    <h1 class="h3 mt-3" style="color: #f03c02; text-align: center;"><strong>HEMEN TEKLİF AL</strong></h1>
+                    <p class="text-muted mb-1 text-center">Web Tasarım Teklif Formu</p>
+                        <p class="text-muted mb-5 text-center">Türkiye'nin en uygun fiyatlı web tasarım ve SEO (Arama Motoru Optimizasyonu) yapan bilişim şirketimizden teklif alın.</p>
+                    <form method="POST">
+                       {% csrf_token %}
+                        {% if kayit %}
+                            <div class="alert alert-success">
+                                <p>{{ kayit }}</p>
+                            </div>
+                        {% endif %}
+                        <div class="mb-3">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Adınız Soyadınız <span>*</span></label>
+                                <input type="text" class="form-control" name="name" required >
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="companyname" class="form-label">İşletme Adı <span>*</span></label>
+                                    <input type="text" class="form-control" name="company"  required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="companyfaaliyet" class="form-label">Faaliyet Alanı <span>*</span></label>
+                                    <input type="text" class="form-control" name="work" required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mailiniz <span>*</span></label>
+                            <input type="email" class="form-control" name="email"
+                                aria-describedby="emailHelp" required >
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefon Numaranız <span>*</span></label>
+                            <input type="text" class="form-control" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message">Mesajınız ( Lütfen İşletmenizi Tanıtan Kısa Bir Açıklama Yazınız)</label>
+                            <textarea class="form-control" name="message" rows="3"></textarea>
+                          </div>
+                        <div class="btn-wrap">
+                            <input type="submit" value="Gönder" class="btn-buy">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Pricing Section -->

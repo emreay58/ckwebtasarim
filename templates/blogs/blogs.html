@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Web Tasarım ve SEO Hakkında Blog Yazılar| CK Web Tasarım 05337424804 {% endblock title %}
+{% block dc.title %}Web Tasarım ve SEO Hakkında Blog Yazılar| CK Web Tasarım 05337424804{% endblock dc.title %}
+{% block og.title %}Web Tasarım ve SEO Hakkında Blog Yazılar| CK Web Tasarım 05337424804{% endblock og.title %}
+{% block tw.title %}Web Tasarım ve SEO Hakkında Blog Yazılar| CK Web Tasarım 05337424804{% endblock tw.title %}
+{% block item.title %}Web Tasarım ve SEO Hakkında Blog Yazılar| CK Web Tasarım 05337424804{% endblock item.title %}
+
+{% block description %}Web Tasarım ve SEO Hakkında Blog Yazılar| Web Tasarım Neden Önemlildir? SEO Nedir? Kurumsal Web Tasarım Tuzla Web Tasarım Web Site Faydaları 05337424804{% endblock description %}
+{% block dc.description %}Web Tasarım ve SEO Hakkında Blog Yazılar| Web Tasarım Neden Önemlildir? SEO Nedir? Kurumsal Web Tasarım Tuzla Web Tasarım Web Site Faydaları 05337424804{% endblock dc.description %}
+{% block og.description %}Web Tasarım ve SEO Hakkında Blog Yazılar| Web Tasarım Neden Önemlildir? SEO Nedir? Kurumsal Web Tasarım Tuzla Web Tasarım Web Site Faydaları 05337424804{% endblock og.description %}
+{% block tw.description %}Web Tasarım ve SEO Hakkında Blog Yazılar| Web Tasarım Neden Önemlildir? SEO Nedir? Kurumsal Web Tasarım Tuzla Web Tasarım Web Site Faydaları 05337424804{% endblock tw.description %}
+{% block item.description %}Web Tasarım ve SEO Hakkında Blog Yazılar| Web Tasarım Neden Önemlildir? SEO Nedir? Kurumsal Web Tasarım Tuzla Web Tasarım Web Site Faydaları 05337424804{% endblock item.description %}
+
+
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Blog</h2>
+            <ol>
+              <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li>Bloglar</li>
+            </ol>
+          </div>
+  
+        </div>
+      </section><!-- End Breadcrumbs -->
+      <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row">
+  
+            <div class="col-lg-8 entries">
+              {% include 'blogs/_blogs.html' %}
+              <div class="blog-pagination">
+                <ul class="justify-content-center">
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                </ul>
+              </div>
+  
+            </div><!-- End blog entries list -->
+  
+            <div class="col-lg-4">
+  
+              <div class="sidebar">
+  
+                <h3 class="sidebar-title">Ara...</h3>
+                <div class="sidebar-item search-form">
+                  <form method="get" action="{% url 'search' %}">
+                    <input name="search" type="text">
+                    <button type="submit"><i class="bi bi-search"></i></button>
+                  </form>
+                </div><!-- End sidebar search formn-->
+  
+                <h3 class="sidebar-title">Kategoriler</h3>
+                {% include 'blogs/_category.html' %}
+  
+                <h3 class="sidebar-title">Diğer Yazılar</h3>
+                <div class="sidebar-item recent-posts">
+                  {% for blogs in blogs %}
+                      <div class="post-item clearfix m-4">
+                        <img src="{{ blogs.image.url }}" alt="">
+                        <h4><a href="{% url 'blog_detail' blogs.slug %}">{{blogs.title}}</a></h4>
+                        <time datetime="2020-01-01">{{blogs.date}}</time>
+                      </div>
+                  {% endfor %}
+                </div><!-- End sidebar recent posts-->
+  
+                <h3 class="sidebar-title">Etiketler</h3>
+                {% include 'blogs/_tag.html' %}
+  
+              </div><!-- End sidebar -->
+  
+            </div><!-- End blog sidebar -->
+  
+          </div>
+  
+        </div>
+      </section><!-- End Blog Section -->
+
+{% endblock content %}

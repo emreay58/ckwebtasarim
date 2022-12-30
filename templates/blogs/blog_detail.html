@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{blog.seotitle|title}}{% endblock title %}
+{% block dc.title %}{{blog.seotitle|title}}{% endblock dc.title %}
+{% block og.title %}{{blog.seotitle|title}}{% endblock og.title %}
+{% block tw.title %}{{blog.seotitle|title}}{% endblock tw.title %}
+{% block item.title %}{{blog.seotitle|title}}{% endblock item.title %}
+
+{% block description %}{{blog.seodescription|title}}{% endblock description %}
+{% block dc.description %}{{blog.seodescription|title}}{% endblock dc.description %}
+{% block og.description %}{{blog.seodescription|title}}{% endblock og.description %}
+{% block tw.description %}{{blog.seodescription|title}}{% endblock tw.description %}
+{% block item.description %}{{blog.seodescription|title}}{% endblock item.description %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>{{blog.title|title}}</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+            <li>Blog Detayı</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+          <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-8 entries">
+            <article class="entry entry-single">
+              <h1 class="entry-title">
+                <a href="{% url 'blog_detail' blog.slug %}">{{ blog.title|title }}</a>
+              </h1>
+             
+              <div class="entry-content">
+                <div>
+                </div>
+                  <div class="text-justify">
+                    {{ blog.descriptions1|safe }}
+                    </div>
+                  </div>
+                  <div class="entry-meta">
+                    <ul>
+                      <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="">{{ blog.author|title}}</a></li>
+                      <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time datetime="2020-01-01">{{blog.date}}</time></a></li>
+                    </ul>
+                  </div>
+    
+            </article><!-- End blog entry -->
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar">
+
+              <h3 class="sidebar-title">Ara</h3>
+              <div class="sidebar-item search-form">
+                <form action="{% url 'search' %}">
+                  <input name="search" type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+              <h3 class="sidebar-title">Kategoriler</h3>
+              {% include 'blogs/_category.html' %}
+
+              <h3 class="sidebar-title mb-3">Diğer Yazılar</h3>
+              <div class="sidebar-item recent-posts">
+                {% for blogs in blogs %}
+                    <div class="post-item clearfix mb-4">
+                      <img class="img-fluid" src="{{ blogs.image.url }}" alt="">
+                      <h4><a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title }}</a></h4>
+                      <time datetime="2020-01-01">{{ blogs.date }}</time>
+                    </div>
+                {% endfor %}
+              </div><!-- End sidebar recent posts-->
+              <h3 class="sidebar-title">Etiketler</h3>
+
+              {% include 'blogs/_tag.html' %}
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+{% endblock content %}

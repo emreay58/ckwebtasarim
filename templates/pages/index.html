@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% load static %}
+<!-- ======= Hero Section ======= -->
+{% block title %}Tuzla Web Tasarım ve SEO Hizmetleri - E-Ticaret, Kurumsal Web Site Tasarımlar{% endblock title %}
+{% block dc.title %}Tuzla Web Tasarım ve SEO Hizmetleri - E-Ticaret, Kurumsal Web Site Tasarımlar{% endblock dc.title %}
+{% block og.title %}Tuzla Web Tasarım ve SEO Hizmetleri - E-Ticaret, Kurumsal Web Site Tasarımlar{% endblock og.title %}
+{% block tw.title %}Tuzla Web Tasarım ve SEO Hizmetleri - E-Ticaret, Kurumsal Web Site Tasarımlar{% endblock tw.title %}
+{% block item.title %}Tuzla Web Tasarım ve SEO Hizmetleri - E-Ticaret, Kurumsal Web Site Tasarımlar{% endblock item.title %}
+
+{% block description %}Tuzla Web Tasarım - Kusursuz bir web siteniz olsun ister misiniz? Google dostu SEO uyumlu web siteler 2.990 ₺'den başlayan kampanya fiyatlarla sizleri bekliyoruz.{% endblock description %}
+{% block dc.description %}Tuzla Web Tasarım - Kusursuz bir web siteniz olsun ister misiniz? Google dostu SEO uyumlu web siteler 2.990 ₺'den başlayan kampanya fiyatlarla sizleri bekliyoruz.{% endblock dc.description %}
+{% block og.description %}Tuzla Web Tasarım - Kusursuz bir web siteniz olsun ister misiniz? Google dostu SEO uyumlu web siteler 2.990 ₺'den başlayan kampanya fiyatlarla sizleri bekliyoruz.{% endblock og.description %}
+{% block tw.description %}Tuzla Web Tasarım - Kusursuz bir web siteniz olsun ister misiniz? Google dostu SEO uyumlu web siteler 2.990 ₺'den başlayan kampanya fiyatlarla sizleri bekliyoruz.{% endblock tw.description %}
+{% block item.description %}Tuzla Web Tasarım - Kusursuz bir web siteniz olsun ister misiniz? Google dostu SEO uyumlu web siteler 2.990 ₺'den başlayan kampanya fiyatlarla sizleri bekliyoruz.{% endblock item.description %}
+{% block content %}
+<section id="hero">
+  <div
+    id="heroCarousel"
+    data-bs-interval="5000"
+    class="carousel slide carousel-fade"
+    data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide 1 -->
+      <div
+        class="carousel-item active"
+        style="background-image: url({% static 'assets/img/slide/slide-1.jpg' %})">
+        <div class="carousel-container">
+          <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2 class="h2">TUZLA WEB <span>TASARIM</span></h2>
+            <p>Tuzla Web Tasarım ve Yazılım Şirketi C&K Web Tasarım ve SEO Hizmetleri, google dostu seo uyumlu kurumsal web siteler 2.990 ₺ 'den başlayan kampanyalı fiyatlar</p>
+            <div class="text-center">
+              <a href="{% url 'teklif' %}" class="btn-get-started">Teklif İste</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="carousel-item"
+        style="background-image: url({% static 'assets/img/slide/slide-2.jpg' %})"
+      >
+        <div class="carousel-container">
+          <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2>GOOGLE DOSTU SEO UYUMLU</h2>
+            <p>
+              Google dostu web sitenizi özel SEO teknikleri ile dilediğiniz anahtar kelimeleri ince ince işleyip arama motorlarında ilk sayfada çıkarıyoruz.
+            </p>
+            <div class="text-center">
+              <a href="{% url 'teklif' %}" class="btn-get-started">Teklif İste</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="carousel-item"
+        style="background-image: url({% static 'assets/img/slide/slide-3.jpg' %})"
+      >
+        <div class="carousel-container">
+          <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2>LOGO VE KURUMSAL KİMLİK</h2>
+            <p>
+             Logo ve Kurumsal Kimlik çalışması yaparak işletmenizin farkedilirliğini arttırıyoruz ve marka oluşumunuzda önemli ipuçları sunuyoruz.
+            </p>
+            <div class="text-center">
+              <a href="{% url 'teklif' %}" class="btn-get-started">Teklif İste</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a
+      class="carousel-control-prev"
+      href="#heroCarousel"
+      role="button"
+      data-bs-slide="prev"
+    >
+      <span
+        class="carousel-control-prev-icon bx bx-left-arrow"
+        aria-hidden="true"
+      ></span>
+    </a>
+
+    <a
+      class="carousel-control-next"
+      href="#heroCarousel"
+      role="button"
+      data-bs-slide="next"
+    >
+      <span
+        class="carousel-control-next-icon bx bx-right-arrow"
+        aria-hidden="true"
+      ></span>
+    </a>
+
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+  </div>
+</section>
+<!-- End Hero -->
+
+<main id="main">
+  <!-- ======= Cta Section ======= -->
+  <section id="cta" class="cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 text-center text-lg-left">
+          <h3>Bu yıl <span> 200'den fazla web sitesi</span> oluşturduk!</h3>
+          <p>
+            Tuzla web tasarım, C&K Web tasarımı ve SEO şirketimizi 2002 yılında kurduk, alanında uzman ve tecrübeli
+            ekibimizle bilişim sektöründe yaklaşık 20 yıldır kesintisiz hizmet veriyoruz. Son teknoloji yazılımlar (Python,Django,HTML,CSS,JS)
+            ile E-ticaret, Kurumsal ve Blog web siteler yapıyoruz. 
+          </p>
+        </div>
+        <div class="col-lg-3 cta-btn-container text-center">
+          <a class="cta-btn align-middle" href="{% url 'teklif' %}">Hemen Teklif Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Cta Section -->
+
+  <!-- End Our Clients Section -->
+</main>
+<!-- End #main -->
+  {% include 'sections/_services.html' %} 
+  {% include 'sections/_features.html' %}
+  {% include 'sections/_about.html' %}
+  {% include 'sections/_clients.html' %} 
+  {% include 'sections/_testimonials.html' %}
+
+
+
+{% endblock content %}

@@ -1,0 +1,76 @@
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>C&K BİLİŞİM</h3>
+            <p>
+              İstasyon Mah.  <br>
+              Hatboyu Cad. No:197<br>
+              Tuzla / İstanbul <br><br>
+              <strong>Telefon : </strong> 05337424804<br>
+              <strong>Email:</strong> info@ckbilisim.net<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Hızlı Linkler</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Ana Sayfa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Hizmetler</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">Hakkımızda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'pricing' %}">Fiyatlama</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Hizmetlerimiz</h4>
+            <ul>
+              {% for services in services  %}
+              <li><i class="bx bx-chevron-right"></i><a href="{% url 'services_detail' services.slug %}"> {{services.title|title}}</a></li>
+                {% endfor %}
+              </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Bize Yazın</h4>
+            <p>Emailinizi yazıp bize gönderin sizinle iletişime geçeceğiz.</p>
+            <form action="" method="post">
+              {% csrf_token %}
+              {% if email %}
+              <div class="alert alert-success">
+                <p>{{ email }}</p>
+              </div>
+              {% endif %}
+              <input type="email" name="email"><input type="submit" value="Gönder">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; 2003 <strong><span></span></strong>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/ -->
+          C&K BİLİŞİM <a href="#">Tüm Hakları Saklıdır.</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://github.com/emreay58" rel="nofollow" class="twitter"><i class="bi bi-github"></i></a>
+        <a href="https://www.facebook.com/emre.ay.165/about" rel="nofollow" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/ckwebtasarim58/" rel="nofollow" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ck-web-tasarim-03b928235/" rel="nofollow" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->

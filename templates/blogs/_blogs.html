@@ -1,0 +1,35 @@
+{% if blogs %}
+{% for blogs in blogs %}
+    <article class="entry">
+        <div class="entry-img">
+            <img src="{{ blogs.image.url }}" alt="" class="img-fluid rounded-3">
+                </div>
+                <h1 class="entry-title h3">
+                  <a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.title|title}}</a>
+                </h1>
+                <p>
+                  {{ blogs.descriptions }}
+                </p>
+  
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.author }}</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'blog_detail' blogs.slug %}"><time datetime="2020-01-01">{{ blogs.date}}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'blog_detail' blogs.slug %}">{{ blogs.category }}</a></li>
+                </ul>
+                </div>
+  
+                <div class="entry-content">
+                  <p>
+                   {{ blogs.description }}
+                  </p>
+                  <div class="read-more">
+                    <a href="{% url 'blog_detail' blogs.slug %}">Devamını Oku</a>
+                </div>
+        </div>
+  
+    </article><!-- End blog entry -->
+{% endfor %}
+{% else %}
+    <div class="alert alert-danger">{{error}}</div>
+{% endif %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}C&K Web Tasarım Hizmetleri | İletişim  | 05337424804{% endblock title %}
+{% block dc.title %}C&K Web Tasarım Hizmetleri | İletişim | 05337424804{% endblock dc.title %}
+{% block og.title %}C&K Web Tasarım Hizmetleri | İletişim | 05337424804{% endblock og.title %}
+{% block tw.title %}C&K Web Tasarım Hizmetleri | İletişim | 05337424804{% endblock tw.title %}
+{% block item.title %}C&K Web Tasarım Hizmetleri | İletişim | 05337424804{% endblock item.title %}
+
+{% block description %}İstasyon Mah. Hatboyu Cad. No:170 Tuzla /İstanbul | info@ckwebtasarim.net | 05337424804{% endblock description %}
+{% block dc.description %}İstasyon Mah. Hatboyu Cad. No:170 Tuzla /İstanbul | info@ckwebtasarim.net | 05337424804{% endblock dc.description %}
+{% block og.description %}İstasyon Mah. Hatboyu Cad. No:170 Tuzla /İstanbul | info@ckwebtasarim.net | 05337424804{% endblock og.description %}
+{% block tw.description %}İstasyon Mah. Hatboyu Cad. No:170 Tuzla /İstanbul | info@ckwebtasarim.net | 05337424804{% endblock tw.description %}
+{% block item.description %}İstasyon Mah. Hatboyu Cad. No:170 Tuzla /İstanbul | info@ckwebtasarim.net | 05337424804{% endblock item.description %}
+{% block content %}
+<main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+          <div class="container">
+    
+            <div class="d-flex justify-content-between align-items-center">
+              <h2>İletişim</h2>
+              <ol>
+                <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+                <li>İletişim</li>
+              </ol>
+            </div>
+    
+          </div>
+        </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <div class="map-section">
+      <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.5069125925045!2d29.324016392290492!3d40.82765999639658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadc2a7673ad9f%3A0x5cf979288dcd96f9!2zSGFjxLFvxJ9sdSBTb2thaw!5e0!3m2!1str!2str!4v1647981615031!5m2!1str!2str" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    {% include 'sections/_contact.html' %}
+
+  </main><!-- End #main -->
+
+{% endblock content %}
+
